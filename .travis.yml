@@ -1,12 +1,20 @@
 sudo: required
 env:
   matrix:
-    - DISTRIBUTION=ubuntu
-    - DISTRIBUTION=debian
-    - DISTRIBUTION=opensuse
-    - DISTRIBUTION=centos
-    - DISTRIBUTION=fedora
+    - DISTRIBUTION=centos-5
+    - DISTRIBUTION=centos-6
+    - DISTRIBUTION=centos-7
+    - DISTRIBUTION=debian-7
+    - DISTRIBUTION=debian-8
+    - DISTRIBUTION=fedora-20
+    - DISTRIBUTION=fedora-21
+    - DISTRIBUTION=fedora-22
+    - DISTRIBUTION=opensuse-13.2
+    - DISTRIBUTION=opensuse-tumbleweed
+    - DISTRIBUTION=ubuntu-12.04
+    - DISTRIBUTION=ubuntu-14.04
+    - DISTRIBUTION=ubuntu-15.04
 services:
   - docker
 script:
-  - ./test-distributions.sh $DISTRIBUTION
+  - ./test-distribution.sh $DISTRIBUTION
