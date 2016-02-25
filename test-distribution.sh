@@ -28,7 +28,7 @@ fi
 
 #remove container and image
 docker rm $CONTAINER_NAME
-docker rmi xtreemfs/$DISTRIBUTION_DIR
+docker rmi scalaris/$DISTRIBUTION_DIR
 
 if [ $ret -ne 0 ]; then
     echo "The following tests failed: $failed"
