@@ -1,5 +1,7 @@
 #!/bin/bash -x
 
+/sbin/ifconfig
+
 result=0
 
 if scalarisctl --help | grep "\-t <stype>" >/dev/null  ; then
