@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "scalaris"
+echo "we tested scalaris"
