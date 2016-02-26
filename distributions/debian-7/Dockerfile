@@ -11,7 +11,7 @@ RUN echo "deb http://download.opensuse.org/repositories/home:/scalaris:/svn/Debi
 RUN wget -q http://download.opensuse.org/repositories/home:/scalaris:/svn/Debian_7.0/Release.key -O - | apt-key add -
 RUN apt-get -qy update
 
-RUN apt-get -qy install scalaris
+RUN apt-get -qy install scalaris scalaris-doc scalaris-java python-scalaris python3-scalaris scalaris-ruby
 
 ADD test.sh /
 RUN chmod +x test.sh

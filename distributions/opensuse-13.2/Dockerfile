@@ -7,7 +7,7 @@ RUN zypper addrepo "http://download.opensuse.org/repositories/home:/scalaris:/sv
 
 RUN zypper --non-interactive --gpg-auto-import-keys ref
 
-RUN zypper in -y  scalaris
+RUN zypper in -y  scalaris scalaris-doc scalaris-java python-scalaris python3-scalaris ruby-scalaris erlang-erlang_js erlang-hanoidb
 
 ADD test.sh /
 RUN chmod +x test.sh

@@ -3,9 +3,8 @@ MAINTAINER Nico Kruber <kruber@zib.de>
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN yum install -y wget
-RUN cd /etc/yum.repos.d/ && wget http://download.opensuse.org/repositories/home:/scalaris:/svn/CentOS_7/home:scalaris:svn.repo
-RUN yum install -y scalaris
+RUN cd /etc/yum.repos.d/ && curl -L --remote-name "http://download.opensuse.org/repositories/home:/scalaris:/svn/CentOS_7/home:scalaris:svn.repo" ; cd -
+RUN yum install -y scalaris scalaris-doc scalaris-java python-scalaris ruby-scalaris wget erlang-hanoidb
 
 ADD test.sh /
 RUN chmod +x test.sh
