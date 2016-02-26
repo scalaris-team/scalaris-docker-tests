@@ -4,14 +4,18 @@
 
 result=0
 
+# use an IP-based nodename in cases where a FQDN is not available
+NODE_NAME="-n node@127.0.0.1"
+
+# new or old scalarisctl?
 if scalarisctl --help | grep "\-t <stype>" >/dev/null  ; then
   START_TYPE_FIRST="-t first"
 else
   START_TYPE_FIRST="-f -s"
 fi
 
-scalarisctl checkinstallation || result=1
-scalarisctl $START_TYPE_FIRST -m -d start || echo -e "\x1b[1;31m##### FAILED to start Scalaris #####\x1b[0m"
+scalarisctl $NODE_NAME checkinstallation || result=1
+scalarisctl $START_TYPE_FIRST $NODE_NAME -m -d start || echo -e "\x1b[1;31m##### FAILED to start Scalaris #####\x1b[0m"
 
 sleep 5s # wait for Scalaris to start
 
@@ -29,7 +33,7 @@ if [ $wget_download -gt 0 ] ; then
 fi
 cd -
 
-scalarisctl $START_TYPE_FIRST -m -d stop || echo -e "\x1b[1;31m##### FAILED to stop Scalaris #####\x1b[0m"
+scalarisctl $START_TYPE_FIRST $NODE_NAME -m -d stop || echo -e "\x1b[1;31m##### FAILED to stop Scalaris #####\x1b[0m"
 
 sleep 5s # wait for Scalaris to stop
 
