@@ -1,5 +1,5 @@
 FROM centos:5
-MAINTAINER Christoph Kleineweber <kleineweber@zib.de>
+MAINTAINER Nico Kruber <kruber@zib.de>
 
 ENV DEBIAN_FRONTEND noninteractive
 

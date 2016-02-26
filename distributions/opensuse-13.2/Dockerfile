@@ -1,5 +1,5 @@
 FROM opensuse:13.2
-MAINTAINER Christoph Kleineweber <kleineweber@zib.de>
+MAINTAINER Nico Kruber <kruber@zib.de>
 
 RUN zypper in -y  wget
 

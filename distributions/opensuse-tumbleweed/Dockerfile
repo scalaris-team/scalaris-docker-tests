@@ -1,5 +1,5 @@
 FROM opensuse:tumbleweed
-MAINTAINER Christoph Kleineweber <kleineweber@zib.de>
+MAINTAINER Nico Kruber <kruber@zib.de>
 
 RUN zypper in -y  wget
 
