@@ -1,20 +1,7 @@
 sudo: required
 env:
   matrix:
-    - DISTRIBUTION=centos-5
-    - DISTRIBUTION=centos-6
-    - DISTRIBUTION=centos-7
-    - DISTRIBUTION=debian-7
-    - DISTRIBUTION=debian-8
-    - DISTRIBUTION=fedora-22
-    - DISTRIBUTION=fedora-23
     - DISTRIBUTION=opensuse-13.2
-    - DISTRIBUTION=opensuse-42.1
-    - DISTRIBUTION=opensuse-tumbleweed
-    - DISTRIBUTION=ubuntu-12.04
-    - DISTRIBUTION=ubuntu-14.04
-    - DISTRIBUTION=ubuntu-15.04
-    - DISTRIBUTION=ubuntu-15.10
 services:
   - docker
 script:
