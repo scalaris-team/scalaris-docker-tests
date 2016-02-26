@@ -14,6 +14,10 @@ DISTRIBUTION_DIR=$1
 ret=0
 failed=""
 
+# copy test.sh
+
+cp test.sh $DIR/$DISTRIBUTION_DIR
+
 # build docker image
 docker build -t scalaris/$DISTRIBUTION_DIR $DIR/$DISTRIBUTION_DIR
 
