@@ -2,15 +2,30 @@
 
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/distributions
 CONTAINER_NAME="test-container"
-
-docker pull ubuntu
-docker pull opensuse
-docker pull centos
-docker pull fedora
-docker pull debian
-
-
 DISTRIBUTION_DIR=$1
+
+
+if [ "${DISTRIBUTION_DIR:0:6}" = "debian" ] ; then
+  docker pull debian
+fi
+
+if [ "${DISTRIBUTION_DIR:0:6}" = "ubuntu" ] ; then
+  docker pull ubuntu
+fi
+
+if [ "${DISTRIBUTION_DIR:0:6}" = "fedora" ] ; then
+  docker pull fedora
+fi
+
+if [ "${DISTRIBUTION_DIR:0:6}" = "centos" ] ; then
+  docker pull centos
+fi
+
+if [ "${DISTRIBUTION_DIR:0:8}" = "opensuse" ] ; then
+  docker pull opensuse
+fi
+
+
 ret=0
 failed=""
 
