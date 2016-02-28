@@ -41,18 +41,22 @@ number_nodes=1
 if [ -x /etc/init.d/scalaris ]; then
   if [ -f /etc/init.d/scalaris-first ]; then
     number_nodes=2
+    sed -e 's/SCALARIS_NODE=.*/SCALARIS_NODE="node@127.0.0.1"/g' -i /etc/scalaris/initd-first.conf
     /etc/init.d/scalaris-first start || ( echo -e "\x1b[1;31m##### FAILED to start Scalaris-first via init.d script #####\x1b[0m"; cat /var/log/scalaris/initd_node.log )
   else
     echo "{first, true}." >> /etc/scalaris/scalaris.local.cfg
   fi
+  sed -e 's/SCALARIS_NODE=.*/SCALARIS_NODE="node1@127.0.0.1"/g' -i /etc/scalaris/initd.conf
   /etc/init.d/scalaris start || ( echo -e "\x1b[1;31m##### FAILED to start Scalaris via init.d script #####\x1b[0m"; cat /var/log/scalaris/initd_node1.log )
 else
   if [ -f /etc/conf.d/scalaris-first ]; then
     number_nodes=2
+    sed -e 's/SCALARIS_NODE=.*/SCALARIS_NODE=node@127.0.0.1/g' -i /etc/conf.d/scalaris-first
     systemctl start scalaris-first.service || ( echo -e "\x1b[1;31m##### FAILED to start Scalaris-first via systemctl #####\x1b[0m"; journalctl -xn50 --no-pager )
   else
     echo "{first, true}." >> /etc/scalaris/scalaris.local.cfg
   fi
+  sed -e 's/SCALARIS_NODE=.*/SCALARIS_NODE=node1@127.0.0.1/g' -i /etc/conf.d/scalaris
   systemctl start scalaris.service || ( echo -e "\x1b[1;31m##### FAILED to start Scalaris via systemctl #####\x1b[0m"; journalctl -xn50 --no-pager )
 fi
 sleep 10s # wait for Scalaris to start
