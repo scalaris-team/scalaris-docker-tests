@@ -3,7 +3,7 @@ MAINTAINER Nico Kruber <kruber@zib.de>
 
 RUN zypper in -y  wget
 
-RUN zypper addrepo "http://download.opensuse.org/repositories/home:/scalaris:/svn/openSUSE_Tumbleweed/home:scalaris:svn.repo"
+RUN zypper addrepo "http://download.opensuse.org/repositories/home:/scalaris:/testing/openSUSE_Tumbleweed/home:scalaris:testing.repo"
 
 RUN zypper --non-interactive --gpg-auto-import-keys ref
 

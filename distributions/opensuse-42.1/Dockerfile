@@ -4,7 +4,7 @@ MAINTAINER Nico Kruber <kruber@zib.de>
 
 RUN zypper --non-interactive in wget
 
-RUN zypper addrepo --refresh "http://download.opensuse.org/repositories/home:/scalaris:/svn/openSUSE_Leap_42.1/home:scalaris:svn.repo"
+RUN zypper addrepo --refresh "http://download.opensuse.org/repositories/home:/scalaris:/testing/openSUSE_Leap_42.1/home:scalaris:testing.repo"
 
 
 RUN zypper --non-interactive --gpg-auto-import-keys ref

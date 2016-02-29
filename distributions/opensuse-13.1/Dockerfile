@@ -3,7 +3,7 @@ MAINTAINER Nico Kruber <kruber@zib.de>
 
 RUN zypper in -y  wget net-tools
 
-RUN zypper addrepo --refresh "http://download.opensuse.org/repositories/home:/scalaris:/svn/openSUSE_13.1/home:scalaris:svn.repo"
+RUN zypper addrepo --refresh "http://download.opensuse.org/repositories/home:/scalaris:/testing/openSUSE_13.1/home:scalaris:testing.repo"
 
 RUN zypper --non-interactive --gpg-auto-import-keys ref
 
