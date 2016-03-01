@@ -30,7 +30,6 @@ ret=0
 failed=""
 
 # copy test.sh
-
 cp test.sh $DIR/$DISTRIBUTION_DIR
 
 # build docker image
