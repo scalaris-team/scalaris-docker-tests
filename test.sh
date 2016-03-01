@@ -1,7 +1,5 @@
 #!/bin/bash
 
-/sbin/ifconfig
-
 result=0
 
 # use an IP-based nodename in cases where a FQDN is not available
