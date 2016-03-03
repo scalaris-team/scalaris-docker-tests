@@ -14,7 +14,6 @@ env:
     - DISTRIBUTION=opensuse-tumbleweed
     - DISTRIBUTION=ubuntu-12.04
     - DISTRIBUTION=ubuntu-14.04
-    - DISTRIBUTION=ubuntu-15.04
     - DISTRIBUTION=ubuntu-15.10
 services:
   - docker
