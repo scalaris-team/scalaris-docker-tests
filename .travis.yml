@@ -6,8 +6,8 @@ env:
     - DISTRIBUTION=centos-7
     - DISTRIBUTION=debian-7
     - DISTRIBUTION=debian-8
-    - DISTRIBUTION=fedora-22
     - DISTRIBUTION=fedora-23
+    - DISTRIBUTION=fedora-24
     - DISTRIBUTION=opensuse-13.1
     - DISTRIBUTION=opensuse-13.2
     - DISTRIBUTION=opensuse-42.1
@@ -15,6 +15,7 @@ env:
     - DISTRIBUTION=ubuntu-12.04
     - DISTRIBUTION=ubuntu-14.04
     - DISTRIBUTION=ubuntu-15.10
+    - DISTRIBUTION=ubuntu-16.04
 services:
   - docker
 script:
